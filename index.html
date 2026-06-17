@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SpotRep — Support</title>
+<style>
+  :root { --accent:#5b6cff; --bg:#0e0f13; --card:#171922; --text:#e9eaf0; --muted:#9aa0b4; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+         background:var(--bg); color:var(--text); line-height:1.6; }
+  .wrap { max-width:760px; margin:0 auto; padding:48px 24px 80px; }
+  header { display:flex; align-items:center; gap:16px; margin-bottom:8px; }
+  .logo { width:64px; height:64px; border-radius:16px; background:linear-gradient(135deg,#5b6cff,#8a5bff);
+          display:flex; align-items:center; justify-content:center; font-weight:700; font-size:28px; }
+  h1 { font-size:34px; margin:0; letter-spacing:-0.02em; }
+  .tag { color:var(--muted); font-size:17px; margin:4px 0 32px; }
+  .card { background:var(--card); border:1px solid #232636; border-radius:16px; padding:24px 26px; margin:18px 0; }
+  h2 { font-size:20px; margin:0 0 10px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .faq h3 { font-size:16px; margin:18px 0 4px; }
+  .faq p { margin:0 0 4px; color:var(--muted); }
+  .btn { display:inline-block; background:var(--accent); color:#fff; padding:12px 20px; border-radius:12px;
+         font-weight:600; margin-top:6px; }
+  footer { color:var(--muted); font-size:14px; margin-top:40px; text-align:center; }
+  ul { margin:6px 0; padding-left:20px; color:var(--muted); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">SR</div>
+      <div>
+        <h1>SpotRep</h1>
+        <div class="tag">The fastest way to log your lifts.</div>
+      </div>
+    </header>
+
+    <div class="card">
+      <h2>Need help?</h2>
+      <p>We're a small team and we read every message. For questions, bug reports,
+         feature requests, or data‑deletion requests, email us:</p>
+      <a class="btn" href="mailto:amit.y@alumni.iitgn.ac.in?subject=SpotRep%20Support">Contact Support</a>
+      <p style="margin-top:14px;color:var(--muted)">amit.y@alumni.iitgn.ac.in — we typically reply within a couple of days.</p>
+    </div>
+
+    <div class="card faq">
+      <h2>Frequently asked questions</h2>
+
+      <h3>Do I need an account?</h3>
+      <p>No. SpotRep works anonymously out of the box. Signing in with Apple is optional and only used to back up and sync your data across devices.</p>
+
+      <h3>How do I log a workout?</h3>
+      <p>Type it, dictate it ("bench 3×10 at 135"), or import a spreadsheet or a photo of an old log. You can also log runs and other cardio.</p>
+
+      <h3>What does the muscle map show?</h3>
+      <p>Tap a muscle group to see what you've trained recently and what to prioritise next.</p>
+
+      <h3>What is a "spotter"?</h3>
+      <p>Someone you invite to view — or, if you allow it, log on your behalf. You can see who has access and revoke it anytime in Settings ▸ Spotters.</p>
+
+      <h3>Does it use Apple Health?</h3>
+      <p>Only with your permission, and only to <em>read</em> your workout history so your consistency stays accurate. SpotRep never writes to Apple Health.</p>
+
+      <h3>How do I export my data?</h3>
+      <p>Settings ▸ Export sends all your workouts to CSV/Excel.</p>
+
+      <h3>How do I delete my data?</h3>
+      <p>Email us at the address above and we'll remove your data from our servers.</p>
+    </div>
+
+    <div class="card">
+      <h2>Legal</h2>
+      <p><a href="./privacy.html">Privacy Policy</a></p>
+    </div>
+
+    <footer>© 2026 SpotRep · <a href="./privacy.html">Privacy</a> · <a href="mailto:amit.y@alumni.iitgn.ac.in">Support</a></footer>
+  </div>
+</body>
+</html>
