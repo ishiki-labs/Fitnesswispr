@@ -1,0 +1,100 @@
+{"id": "qa_lasttime-001", "category": "qa_lasttime", "message": "what's my pr on bench?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-002", "category": "qa_lasttime", "message": "what is my best bench", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-003", "category": "qa_lasttime", "message": "how much did i bench last time", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-004", "category": "qa_lasttime", "message": "how much do i usually bench?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-005", "category": "qa_lasttime", "message": "what did i do last time on bench", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-006", "category": "qa_lasttime", "message": "am i making progress on bench", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-007", "category": "qa_lasttime", "message": "how's my bench trending?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-008", "category": "qa_lasttime", "message": "how many reps did i hit on bench last session", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-009", "category": "qa_lasttime", "message": "show me my bench history", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-010", "category": "qa_lasttime", "message": "when did i last do bench?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-011", "category": "qa_lasttime", "message": "have i been improving on bench", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-012", "category": "qa_lasttime", "message": "what's my heaviest bench", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-013", "category": "qa_lasttime", "message": "did i bench this week?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-014", "category": "qa_lasttime", "message": "how often do i train bench", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-015", "category": "qa_lasttime", "message": "summarize my bench progress", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-016", "category": "qa_lasttime", "message": "compare my bench this month vs last month?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-017", "category": "qa_lasttime", "message": "what's my average reps on bench", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-018", "category": "qa_lasttime", "message": "tell me my bench numbers", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-019", "category": "qa_lasttime", "message": "what's my pr on squat?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-020", "category": "qa_lasttime", "message": "what is my best squat", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-021", "category": "qa_lasttime", "message": "how much did i squat last time", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-022", "category": "qa_lasttime", "message": "how much do i usually squat?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-023", "category": "qa_lasttime", "message": "what did i do last time on squat", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-024", "category": "qa_lasttime", "message": "am i making progress on squat", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-025", "category": "qa_lasttime", "message": "how's my squat trending?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-026", "category": "qa_lasttime", "message": "how many reps did i hit on squat last session", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-027", "category": "qa_lasttime", "message": "show me my squat history", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-028", "category": "qa_lasttime", "message": "when did i last do squat?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-029", "category": "qa_lasttime", "message": "have i been improving on squat", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-030", "category": "qa_lasttime", "message": "what's my heaviest squat", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-031", "category": "qa_lasttime", "message": "did i squat this week?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-032", "category": "qa_lasttime", "message": "how often do i train squat", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-033", "category": "qa_lasttime", "message": "summarize my squat progress", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-034", "category": "qa_lasttime", "message": "compare my squat this month vs last month?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-035", "category": "qa_lasttime", "message": "what's my average reps on squat", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-036", "category": "qa_lasttime", "message": "tell me my squat numbers", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-037", "category": "qa_lasttime", "message": "what's my pr on deadlift?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-038", "category": "qa_lasttime", "message": "what is my best deadlift", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-039", "category": "qa_lasttime", "message": "how much did i deadlift last time", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-040", "category": "qa_lasttime", "message": "how much do i usually deadlift?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-041", "category": "qa_lasttime", "message": "what did i do last time on deadlift", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-042", "category": "qa_lasttime", "message": "am i making progress on deadlift", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-043", "category": "qa_lasttime", "message": "how's my deadlift trending?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-044", "category": "qa_lasttime", "message": "how many reps did i hit on deadlift last session", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-045", "category": "qa_lasttime", "message": "show me my deadlift history", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-046", "category": "qa_lasttime", "message": "when did i last do deadlift?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-047", "category": "qa_lasttime", "message": "have i been improving on deadlift", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-048", "category": "qa_lasttime", "message": "what's my heaviest deadlift", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-049", "category": "qa_lasttime", "message": "did i deadlift this week?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-050", "category": "qa_lasttime", "message": "how often do i train deadlift", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-051", "category": "qa_lasttime", "message": "summarize my deadlift progress", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-052", "category": "qa_lasttime", "message": "compare my deadlift this month vs last month?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-053", "category": "qa_lasttime", "message": "what's my average reps on deadlift", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-054", "category": "qa_lasttime", "message": "tell me my deadlift numbers", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-055", "category": "qa_lasttime", "message": "what's my pr on overhead press?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-056", "category": "qa_lasttime", "message": "what is my best overhead press", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-057", "category": "qa_lasttime", "message": "how much did i overhead press last time", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-058", "category": "qa_lasttime", "message": "how much do i usually overhead press?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-059", "category": "qa_lasttime", "message": "what did i do last time on overhead press", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-060", "category": "qa_lasttime", "message": "am i making progress on overhead press", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-061", "category": "qa_lasttime", "message": "how's my overhead press trending?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-062", "category": "qa_lasttime", "message": "how many reps did i hit on overhead press last session", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-063", "category": "qa_lasttime", "message": "show me my overhead press history", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-064", "category": "qa_lasttime", "message": "when did i last do overhead press?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-065", "category": "qa_lasttime", "message": "have i been improving on overhead press", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-066", "category": "qa_lasttime", "message": "what's my heaviest overhead press", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-067", "category": "qa_lasttime", "message": "did i overhead press this week?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-068", "category": "qa_lasttime", "message": "how often do i train overhead press", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-069", "category": "qa_lasttime", "message": "summarize my overhead press progress", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-070", "category": "qa_lasttime", "message": "compare my overhead press this month vs last month?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-071", "category": "qa_lasttime", "message": "what's my average reps on overhead press", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-072", "category": "qa_lasttime", "message": "tell me my overhead press numbers", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-073", "category": "qa_lasttime", "message": "what's my pr on row?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-074", "category": "qa_lasttime", "message": "what is my best row", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-075", "category": "qa_lasttime", "message": "how much did i row last time", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-076", "category": "qa_lasttime", "message": "how much do i usually row?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-077", "category": "qa_lasttime", "message": "what did i do last time on row", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-078", "category": "qa_lasttime", "message": "am i making progress on row", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-079", "category": "qa_lasttime", "message": "how's my row trending?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-080", "category": "qa_lasttime", "message": "how many reps did i hit on row last session", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-081", "category": "qa_lasttime", "message": "show me my row history", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-082", "category": "qa_lasttime", "message": "when did i last do row?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-083", "category": "qa_lasttime", "message": "have i been improving on row", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-084", "category": "qa_lasttime", "message": "what's my heaviest row", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-085", "category": "qa_lasttime", "message": "did i row this week?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-086", "category": "qa_lasttime", "message": "how often do i train row", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-087", "category": "qa_lasttime", "message": "summarize my row progress", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-088", "category": "qa_lasttime", "message": "compare my row this month vs last month?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-089", "category": "qa_lasttime", "message": "what's my average reps on row", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-090", "category": "qa_lasttime", "message": "tell me my row numbers", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-091", "category": "qa_lasttime", "message": "what's my pr on curls?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-092", "category": "qa_lasttime", "message": "what is my best curls", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-093", "category": "qa_lasttime", "message": "how much did i curls last time", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-094", "category": "qa_lasttime", "message": "how much do i usually curls?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-095", "category": "qa_lasttime", "message": "what did i do last time on curls", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-096", "category": "qa_lasttime", "message": "am i making progress on curls", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-097", "category": "qa_lasttime", "message": "how's my curls trending?", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-098", "category": "qa_lasttime", "message": "how many reps did i hit on curls last session", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-099", "category": "qa_lasttime", "message": "show me my curls history", "expect": {"action": "answer"}}
+{"id": "qa_lasttime-100", "category": "qa_lasttime", "message": "when did i last do curls?", "expect": {"action": "answer"}}

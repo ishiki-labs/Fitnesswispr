@@ -9,6 +9,8 @@ struct SessionDetailView: View {
     @State private var showCardioDeleteConfirm = false
     @State private var error: String?
     @State private var editedDate = Date()
+    /// Snapshot taken when entering edit mode so a failed save can roll back.
+    @State private var editSnapshot: WorkoutSession?
 
     /// Called after a successful change so parent screens can refresh.
     private let onChanged: (() -> Void)?
@@ -85,22 +87,7 @@ struct SessionDetailView: View {
                     }
                 }
 
-                ForEach(session.exercises) { exercise in
-                    ZStack(alignment: .topTrailing) {
-                        ExerciseConfirmCard(exercise: exercise)
-                        if isEditing {
-                            Button {
-                                pendingDelete = exercise
-                            } label: {
-                                Image(systemName: "minus.circle.fill")
-                                    .font(.title2)
-                                    .symbolRenderingMode(.palette)
-                                    .foregroundStyle(.white, .red)
-                            }
-                            .padding(8)
-                        }
-                    }
-                }
+                exerciseList
 
                 if let error {
                     ErrorBanner(message: error) { self.error = nil }
@@ -115,9 +102,10 @@ struct SessionDetailView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(isEditing ? "Done" : "Edit") {
                         if isEditing {
-                            saveDateIfChanged()
+                            saveEdits()
                         } else {
                             editedDate = Date.from(apiString: session.workoutDate) ?? Date()
+                            editSnapshot = session
                         }
                         isEditing.toggle()
                     }
@@ -147,6 +135,21 @@ struct SessionDetailView: View {
         }
     }
 
+    @ViewBuilder
+    private var exerciseList: some View {
+        if isEditing {
+            ForEach($session.exercises) { $exercise in
+                ExerciseEditCard(exercise: $exercise) {
+                    pendingDelete = exercise
+                }
+            }
+        } else {
+            ForEach(session.exercises) { exercise in
+                ExerciseConfirmCard(exercise: exercise)
+            }
+        }
+    }
+
     /// Delete the entire session (used for cardio entries, which have no
     /// individual exercises to remove). Optimistic: dismiss immediately.
     private func deleteWholeSession() {
@@ -159,18 +162,33 @@ struct SessionDetailView: View {
         }
     }
 
-    private func saveDateIfChanged() {
+    /// Persist every edit made in this session (date, exercise names, sets,
+    /// reps, weights) in one update. Sends the exercise list only when the
+    /// session actually has exercises, so cardio entries just move the date.
+    private func saveEdits() {
         guard let sessionId = session.sessionId else { return }
-        let newStr = editedDate.apiDateString
-        guard newStr != session.workoutDate else { return }
+        let previous = editSnapshot ?? session
+        editSnapshot = nil
 
-        // Optimistic: reflect the new date immediately, sync in the background.
-        let previous = session
-        session.workoutDate = newStr
+        // Tidy up the edited exercises: sequential set numbers, drop blank sets
+        // and blank-named exercises the user cleared out.
+        normalizeExercises()
+
+        let newDate = editedDate.apiDateString
+        let hasExercises = !session.exercises.isEmpty
+        let dateChanged = newDate != previous.workoutDate
+        let exercisesChanged = session.exercises != previous.exercises
+        guard dateChanged || exercisesChanged else { return }
+
+        // Optimistic: reflect the edits immediately, sync in the background.
+        session.workoutDate = newDate
         onUpdated?(session)
         Task {
             do {
-                let req = UpdateSessionRequest(workoutDate: newStr)
+                let req = UpdateSessionRequest(
+                    workoutDate: newDate,
+                    exercises: hasExercises ? session.exercises : nil
+                )
                 let updated: WorkoutSession = try await APIClient.shared.put(
                     APIEndpoints.session(sessionId), body: req
                 )
@@ -180,8 +198,23 @@ struct SessionDetailView: View {
             } catch {
                 session = previous
                 onUpdated?(previous)
-                self.error = "Couldn't change the date: \(error.localizedDescription)"
+                self.error = "Couldn't save your changes: \(error.localizedDescription)"
             }
+        }
+    }
+
+    /// Renumber sets sequentially and drop sets/exercises the user emptied out.
+    private func normalizeExercises() {
+        session.exercises = session.exercises.compactMap { ex in
+            var ex = ex
+            ex.name = ex.name.trimmingCharacters(in: .whitespacesAndNewlines)
+            let kept = ex.sets.filter { $0.reps != nil || $0.weight != nil || $0.durationSeconds != nil }
+            ex.sets = (kept.isEmpty ? ex.sets : kept).enumerated().map { idx, set in
+                var set = set
+                set.setNumber = idx + 1
+                return set
+            }
+            return ex.name.isEmpty ? nil : ex
         }
     }
 

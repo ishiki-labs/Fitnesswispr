@@ -195,9 +195,13 @@ final class RecordViewModel: ObservableObject {
 
 struct ParseContext: Encodable {
     let bodyWeightLbs: Double?
+    /// The device's LOCAL today (YYYY-MM-DD) so the parser resolves relative
+    /// dates ("yesterday", "last friday") in the user's timezone.
+    var today: String = Date().apiDateString
 
     enum CodingKeys: String, CodingKey {
         case bodyWeightLbs = "body_weight_lbs"
+        case today
     }
 }
 

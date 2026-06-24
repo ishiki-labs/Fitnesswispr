@@ -2,7 +2,7 @@ import uuid
 from datetime import date
 from decimal import Decimal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class ExerciseSetCreate(BaseModel):
@@ -11,6 +11,14 @@ class ExerciseSetCreate(BaseModel):
     weight: Decimal | None = None
     weight_unit: str = "lbs"
     duration_seconds: int | None = None
+
+    @field_validator("weight_unit", mode="before")
+    @classmethod
+    def _default_weight_unit(cls, v):
+        # Bodyweight sets arrive with weight_unit: null; coerce to avoid a 500.
+        if v is None or (isinstance(v, str) and not v.strip()):
+            return "lbs"
+        return v
 
 
 class ExerciseCreate(BaseModel):

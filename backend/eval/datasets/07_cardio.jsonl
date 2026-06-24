@@ -1,0 +1,100 @@
+{"id": "cardio-001", "category": "cardio", "message": "ran 2 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-002", "category": "cardio", "message": "i ran 3 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-003", "category": "cardio", "message": "went for a 5 mile run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-004", "category": "cardio", "message": "4 mile jog", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-005", "category": "cardio", "message": "ran 6k", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-006", "category": "cardio", "message": "treadmill for 20 minutes", "expect": {"action": "register_cardio", "activity": "Treadmill"}}
+{"id": "cardio-007", "category": "cardio", "message": "30 minute run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-008", "category": "cardio", "message": "cycled 5 miles", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-009", "category": "cardio", "message": "biked for 15 minutes", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-010", "category": "cardio", "message": "rowed for 25 minutes", "expect": {"action": "register_cardio", "activity": "Rowing"}}
+{"id": "cardio-011", "category": "cardio", "message": "did a 20 min hiit session", "expect": {"action": "register_cardio", "activity": "HIIT"}}
+{"id": "cardio-012", "category": "cardio", "message": "sprints 10x100m", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "cardio-013", "category": "cardio", "message": "did sprints, 8x200m", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "cardio-014", "category": "cardio", "message": "walked 4 miles", "expect": {"action": "register_cardio", "activity": "Walking"}}
+{"id": "cardio-015", "category": "cardio", "message": "swam for 25 minutes", "expect": {"action": "register_cardio", "activity": "Swimming"}}
+{"id": "cardio-016", "category": "cardio", "message": "log ran 2 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-017", "category": "cardio", "message": "log i ran 3 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-018", "category": "cardio", "message": "log went for a 5 mile run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-019", "category": "cardio", "message": "log 4 mile jog", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-020", "category": "cardio", "message": "log ran 6k", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-021", "category": "cardio", "message": "log treadmill for 20 minutes", "expect": {"action": "register_cardio", "activity": "Treadmill"}}
+{"id": "cardio-022", "category": "cardio", "message": "log 30 minute run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-023", "category": "cardio", "message": "log cycled 5 miles", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-024", "category": "cardio", "message": "log biked for 15 minutes", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-025", "category": "cardio", "message": "log rowed for 25 minutes", "expect": {"action": "register_cardio", "activity": "Rowing"}}
+{"id": "cardio-026", "category": "cardio", "message": "log did a 20 min hiit session", "expect": {"action": "register_cardio", "activity": "HIIT"}}
+{"id": "cardio-027", "category": "cardio", "message": "log sprints 10x100m", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "cardio-028", "category": "cardio", "message": "log did sprints, 8x200m", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "cardio-029", "category": "cardio", "message": "log walked 4 miles", "expect": {"action": "register_cardio", "activity": "Walking"}}
+{"id": "cardio-030", "category": "cardio", "message": "log swam for 25 minutes", "expect": {"action": "register_cardio", "activity": "Swimming"}}
+{"id": "cardio-031", "category": "cardio", "message": "record ran 2 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-032", "category": "cardio", "message": "record i ran 3 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-033", "category": "cardio", "message": "record went for a 5 mile run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-034", "category": "cardio", "message": "record 4 mile jog", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-035", "category": "cardio", "message": "record ran 6k", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-036", "category": "cardio", "message": "record treadmill for 20 minutes", "expect": {"action": "register_cardio", "activity": "Treadmill"}}
+{"id": "cardio-037", "category": "cardio", "message": "record 30 minute run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-038", "category": "cardio", "message": "record cycled 5 miles", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-039", "category": "cardio", "message": "record biked for 15 minutes", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-040", "category": "cardio", "message": "record rowed for 25 minutes", "expect": {"action": "register_cardio", "activity": "Rowing"}}
+{"id": "cardio-041", "category": "cardio", "message": "record did a 20 min hiit session", "expect": {"action": "register_cardio", "activity": "HIIT"}}
+{"id": "cardio-042", "category": "cardio", "message": "record sprints 10x100m", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "cardio-043", "category": "cardio", "message": "record did sprints, 8x200m", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "cardio-044", "category": "cardio", "message": "record walked 4 miles", "expect": {"action": "register_cardio", "activity": "Walking"}}
+{"id": "cardio-045", "category": "cardio", "message": "record swam for 25 minutes", "expect": {"action": "register_cardio", "activity": "Swimming"}}
+{"id": "cardio-046", "category": "cardio", "message": "can you log ran 2 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-047", "category": "cardio", "message": "can you log i ran 3 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-048", "category": "cardio", "message": "can you log went for a 5 mile run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-049", "category": "cardio", "message": "can you log 4 mile jog", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-050", "category": "cardio", "message": "can you log ran 6k", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-051", "category": "cardio", "message": "can you log treadmill for 20 minutes", "expect": {"action": "register_cardio", "activity": "Treadmill"}}
+{"id": "cardio-052", "category": "cardio", "message": "can you log 30 minute run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-053", "category": "cardio", "message": "can you log cycled 5 miles", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-054", "category": "cardio", "message": "can you log biked for 15 minutes", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-055", "category": "cardio", "message": "can you log rowed for 25 minutes", "expect": {"action": "register_cardio", "activity": "Rowing"}}
+{"id": "cardio-056", "category": "cardio", "message": "can you log did a 20 min hiit session", "expect": {"action": "register_cardio", "activity": "HIIT"}}
+{"id": "cardio-057", "category": "cardio", "message": "can you log sprints 10x100m", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "cardio-058", "category": "cardio", "message": "can you log did sprints, 8x200m", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "cardio-059", "category": "cardio", "message": "can you log walked 4 miles", "expect": {"action": "register_cardio", "activity": "Walking"}}
+{"id": "cardio-060", "category": "cardio", "message": "can you log swam for 25 minutes", "expect": {"action": "register_cardio", "activity": "Swimming"}}
+{"id": "cardio-061", "category": "cardio", "message": "please log ran 2 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-062", "category": "cardio", "message": "please log i ran 3 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-063", "category": "cardio", "message": "please log went for a 5 mile run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-064", "category": "cardio", "message": "please log 4 mile jog", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-065", "category": "cardio", "message": "please log ran 6k", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-066", "category": "cardio", "message": "please log treadmill for 20 minutes", "expect": {"action": "register_cardio", "activity": "Treadmill"}}
+{"id": "cardio-067", "category": "cardio", "message": "please log 30 minute run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-068", "category": "cardio", "message": "please log cycled 5 miles", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-069", "category": "cardio", "message": "please log biked for 15 minutes", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-070", "category": "cardio", "message": "please log rowed for 25 minutes", "expect": {"action": "register_cardio", "activity": "Rowing"}}
+{"id": "cardio-071", "category": "cardio", "message": "please log did a 20 min hiit session", "expect": {"action": "register_cardio", "activity": "HIIT"}}
+{"id": "cardio-072", "category": "cardio", "message": "please log sprints 10x100m", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "cardio-073", "category": "cardio", "message": "please log did sprints, 8x200m", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "cardio-074", "category": "cardio", "message": "please log walked 4 miles", "expect": {"action": "register_cardio", "activity": "Walking"}}
+{"id": "cardio-075", "category": "cardio", "message": "please log swam for 25 minutes", "expect": {"action": "register_cardio", "activity": "Swimming"}}
+{"id": "cardio-076", "category": "cardio", "message": "i did ran 2 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-077", "category": "cardio", "message": "i did i ran 3 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-078", "category": "cardio", "message": "i did went for a 5 mile run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-079", "category": "cardio", "message": "i did 4 mile jog", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-080", "category": "cardio", "message": "i did ran 6k", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-081", "category": "cardio", "message": "i did treadmill for 20 minutes", "expect": {"action": "register_cardio", "activity": "Treadmill"}}
+{"id": "cardio-082", "category": "cardio", "message": "i did 30 minute run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-083", "category": "cardio", "message": "i did cycled 5 miles", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-084", "category": "cardio", "message": "i did biked for 15 minutes", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-085", "category": "cardio", "message": "i did rowed for 25 minutes", "expect": {"action": "register_cardio", "activity": "Rowing"}}
+{"id": "cardio-086", "category": "cardio", "message": "i did did a 20 min hiit session", "expect": {"action": "register_cardio", "activity": "HIIT"}}
+{"id": "cardio-087", "category": "cardio", "message": "i did sprints 10x100m", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "cardio-088", "category": "cardio", "message": "i did did sprints, 8x200m", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "cardio-089", "category": "cardio", "message": "i did walked 4 miles", "expect": {"action": "register_cardio", "activity": "Walking"}}
+{"id": "cardio-090", "category": "cardio", "message": "i did swam for 25 minutes", "expect": {"action": "register_cardio", "activity": "Swimming"}}
+{"id": "cardio-091", "category": "cardio", "message": "just finished ran 2 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-092", "category": "cardio", "message": "just finished i ran 3 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-093", "category": "cardio", "message": "just finished went for a 5 mile run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-094", "category": "cardio", "message": "just finished 4 mile jog", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-095", "category": "cardio", "message": "just finished ran 6k", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-096", "category": "cardio", "message": "just finished treadmill for 20 minutes", "expect": {"action": "register_cardio", "activity": "Treadmill"}}
+{"id": "cardio-097", "category": "cardio", "message": "just finished 30 minute run", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "cardio-098", "category": "cardio", "message": "just finished cycled 5 miles", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-099", "category": "cardio", "message": "just finished biked for 15 minutes", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "cardio-100", "category": "cardio", "message": "just finished rowed for 25 minutes", "expect": {"action": "register_cardio", "activity": "Rowing"}}

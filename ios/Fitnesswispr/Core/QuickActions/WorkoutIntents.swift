@@ -87,7 +87,7 @@ struct QuickLogService {
         }
 
         let req = CreateSessionRequest(
-            workoutDate: Date().apiDateString,
+            workoutDate: parsed.resolvedDate.apiDateString,
             source: "siri",
             rawTranscript: trimmed,
             workoutType: parsed.workoutType,

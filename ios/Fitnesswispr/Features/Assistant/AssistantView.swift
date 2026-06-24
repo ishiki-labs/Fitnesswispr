@@ -305,8 +305,15 @@ private struct WorkoutDraftCard: View {
     let onSave: (ParsedSession, Date) -> Void
     let onDiscard: () -> Void
 
-    @State private var date = Date()
+    @State private var date: Date
     @State private var saved = false
+
+    init(parsed: ParsedSession, onSave: @escaping (ParsedSession, Date) -> Void, onDiscard: @escaping () -> Void) {
+        self.parsed = parsed
+        self.onSave = onSave
+        self.onDiscard = onDiscard
+        _date = State(initialValue: parsed.resolvedDate)
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {

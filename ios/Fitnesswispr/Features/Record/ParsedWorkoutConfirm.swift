@@ -5,7 +5,14 @@ struct ParsedWorkoutConfirm: View {
     let onSave: (Date) -> Void
     let onRetry: () -> Void
 
-    @State private var workoutDate = Date()
+    @State private var workoutDate: Date
+
+    init(parsed: ParsedSession, onSave: @escaping (Date) -> Void, onRetry: @escaping () -> Void) {
+        self.parsed = parsed
+        self.onSave = onSave
+        self.onRetry = onRetry
+        _workoutDate = State(initialValue: parsed.resolvedDate)
+    }
 
     var body: some View {
         NavigationStack {

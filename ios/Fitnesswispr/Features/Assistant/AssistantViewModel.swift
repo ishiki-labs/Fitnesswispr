@@ -24,6 +24,13 @@ final class AssistantViewModel: ObservableObject {
     private var frequentReps: [Int] = []
     /// Set while we're waiting for the user to supply a missing detail.
     private var pendingClarification: Clarification?
+    /// The most recently shown, still-unsaved workout draft. Lets a spoken
+    /// correction ("no I meant sled push, not lunges") be applied to it by
+    /// re-parsing, instead of being misread as a new message or sent to chat.
+    private var lastDraft: (id: UUID, session: ParsedSession)?
+    /// The transcript behind the draft currently being clarified — lets us tell
+    /// "1x5" (an explicit single set) from a lone set we should ask to confirm.
+    private var lastTranscript: String = ""
     /// Fields we've already asked about for the workout currently being logged,
     /// so we never ask twice (and "Bodyweight" answers aren't re-prompted).
     private var askedFields: Set<Clarification.Kind> = []
@@ -118,12 +125,42 @@ final class AssistantViewModel: ObservableObject {
             return
         }
         pendingClarification = nil
+
+        // A spoken correction of the draft we just showed ("no I meant sled
+        // push, not lunges") with no fresh numbers: fix the exercise on that
+        // draft by re-parsing the correction with the draft's numbers. Never
+        // let it fall through to chat (which would falsely claim to log it).
+        if let last = lastDraft, looksLikeCorrection(text),
+           !looksLikeQuestion(text), !looksLikeHistoryQuestion(text),
+           !looksLikeWorkout(text), !looksLikeCardio(text),
+           let ex = last.session.exercises.first {
+            isBusy = true
+            replace(last.id, with: .thinking)
+            askedFields = [.variant, .exercise]   // name is being resolved here
+            let transcript = rebuildTranscript(text, from: ex)
+            Task {
+                await logWorkout(transcript, replacing: last.id,
+                                 allowQuestionFallback: false, allowClarify: false)
+                isBusy = false
+            }
+            return
+        }
         askedFields = []   // a fresh workout — clear what we've asked about
 
         let thinkingID = appendThinking()
         isBusy = true
         Task {
-            if looksLikeQuestion(text) {
+            // A message that carries loggable content (sets/reps/weight, or a
+            // cardio entry) is a log even when phrased as a request or question —
+            // "can you record bench 3x10 at 135?", "can you log ran 2 miles".
+            // Only treat it as a question when it reads like one AND has no
+            // loggable content.
+            let loggable = looksLikeWorkout(text) || looksLikeCardio(text)
+            // A history question ("what's my one rep max on bench") is answered
+            // even when it mentions an exercise + number; otherwise a message
+            // only routes to chat when it reads like a question AND carries no
+            // loggable content.
+            if looksLikeHistoryQuestion(text) || (looksLikeQuestion(text) && !loggable) {
                 await answer(text, replacing: thinkingID)
             } else {
                 await logWorkout(text, replacing: thinkingID, allowQuestionFallback: true, allowClarify: true)
@@ -153,10 +190,25 @@ final class AssistantViewModel: ObservableObject {
                 isBusy = false
             }
         case .variant:
-            guard var draft = clarification.draft, !draft.exercises.isEmpty else { return }
+            guard let draft = clarification.draft, let ex = draft.exercises.first else { return }
             let chosen = answer.trimmingCharacters(in: .whitespacesAndNewlines)
-            if !chosen.isEmpty { draft.exercises[0].name = chosen }
-            present(draft, in: appendThinking())
+            if looksLikeCorrection(chosen) {
+                // A typed correction ("sled push and pull not leg press") — re-parse
+                // with the draft's numbers so we store the intended exercise, not the
+                // literal correction sentence.
+                isBusy = true
+                askedFields = [.variant, .exercise]
+                let thinkingID = appendThinking()
+                Task {
+                    await logWorkout(rebuildTranscript(chosen, from: ex), replacing: thinkingID,
+                                     allowQuestionFallback: false, allowClarify: false)
+                    isBusy = false
+                }
+            } else {
+                var updated = draft
+                if !chosen.isEmpty { updated.exercises[0].name = chosen }
+                present(updated, in: appendThinking())
+            }
         case .weight, .reps, .sets:
             guard var draft = clarification.draft else { return }
             apply(field: clarification.kind, answer: answer, to: &draft)
@@ -189,6 +241,63 @@ final class AssistantViewModel: ObservableObject {
         return keywords.contains(where: { t.contains($0) })
     }
 
+    /// A *history* question asks about past data, so it must be answered even
+    /// when it also mentions an exercise + number (e.g. "what's my one rep max
+    /// on bench"). Takes precedence over loggable content in the routing gate.
+    private func looksLikeHistoryQuestion(_ text: String) -> Bool {
+        let t = text.lowercased()
+        let keywords = [
+            "my pr", "personal record", " pr ", "1rm", "one rep max", "rep max",
+            "last time", "how much", "how many", "how often", "progress",
+            "best ", "average", "trend", "heaviest", "what's my", "what is my",
+            "whats my", "how's my", "hows my", "compared to", "since last",
+            "do i usually"
+        ]
+        return keywords.contains(where: { t.contains($0) })
+    }
+
+    /// Voice transcription often spells numbers out ("three sets twelve reps")
+    /// rather than using digits, so the workout/cardio guards accept both.
+    private static let numberWords: Set<String> = [
+        "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+        "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+        "seventeen", "eighteen", "nineteen", "twenty", "thirty", "forty",
+        "fifty", "sixty", "seventy", "eighty", "ninety", "hundred", "couple",
+        "few", "dozen"
+    ]
+
+    private func hasNumber(_ t: String) -> Bool {
+        if t.rangeOfCharacter(from: .decimalDigits) != nil { return true }
+        let tokens = t.split { !$0.isLetter }.map(String.init)
+        return tokens.contains { Self.numberWords.contains($0) }
+    }
+
+    /// A message that fixes the exercise of the draft we just showed rather than
+    /// starting a new one — "no I meant ...", "X not Y", "actually ...".
+    private func looksLikeCorrection(_ text: String) -> Bool {
+        let t = " \(text.lowercased()) "
+        let cues = [
+            " no i meant ", " i meant ", " not ", " actually ", " instead",
+            " i said ", " that's not ", " thats not ", " meant ", " no, "
+        ]
+        return cues.contains { t.contains($0) }
+    }
+
+    /// Rebuild a transcript from a corrected/refined exercise name plus the
+    /// draft's existing numbers, so re-parsing yields the intended exercise
+    /// (normalised by the parser) instead of a verbatim sentence.
+    private func rebuildTranscript(_ name: String, from ex: Exercise) -> String {
+        guard let first = ex.sets.first else { return name }
+        let count = ex.sets.count
+        if let dur = first.durationSeconds {
+            return "\(name), \(count) sets of \(dur) seconds"
+        }
+        var parts = ["\(count) sets"]
+        if let r = first.reps { parts.append("of \(r) reps") }
+        if let w = first.weight { parts.append("at \(formatNumber(w)) \(first.weightUnit)") }
+        return "\(name), " + parts.joined(separator: " ")
+    }
+
     // MARK: - Logging
 
     private func logWorkout(
@@ -197,6 +306,7 @@ final class AssistantViewModel: ObservableObject {
         allowQuestionFallback: Bool,
         allowClarify: Bool = false
     ) async {
+        lastTranscript = text
         let context = ParseContext(bodyWeightLbs: bodyWeightLbs)
         let req = ParseRequest(
             transcript: text,
@@ -240,6 +350,7 @@ final class AssistantViewModel: ObservableObject {
     private func present(_ draft: ParsedSession, in slotID: UUID) {
         guard let field = firstMissingField(draft) else {
             replace(slotID, with: .workoutDraft(draft))
+            lastDraft = (slotID, draft)   // a savable draft a correction can target
             return
         }
         let clarification = Clarification(
@@ -263,9 +374,15 @@ final class AssistantViewModel: ObservableObject {
         if ex.sets.contains(where: { $0.durationSeconds != nil }) { return nil } // timed hold
         let hasWeight = ex.sets.contains { $0.weight != nil }
         let hasReps = ex.sets.contains { $0.reps != nil }
-        if !askedFields.contains(.weight), !hasWeight, !isBodyweight(ex.name) { return .weight }
-        if !askedFields.contains(.reps), !hasReps { return .reps }
-        if !askedFields.contains(.sets), ex.sets.count == 1 { return .sets }
+        let bodyweight = (ex.equipment?.lowercased() == "bodyweight")
+            || (ex.equipment?.lowercased() == "body weight")
+            || isBodyweight(ex.name)
+        if !askedFields.contains(.weight), !hasWeight, !bodyweight { return .weight }
+        // Carries/sleds/yoke are measured by distance, not reps — don't nag for reps.
+        if !askedFields.contains(.reps), !hasReps, !isDistanceBased(ex.name) { return .reps }
+        // Only confirm a lone set when the user didn't actually state a count
+        // ("1x5" / "1 set" is a deliberate single set, not a missing detail).
+        if !askedFields.contains(.sets), ex.sets.count == 1, !messageStatesSetCount(lastTranscript) { return .sets }
         return nil
     }
 
@@ -349,11 +466,43 @@ final class AssistantViewModel: ObservableObject {
     private func isBodyweight(_ name: String) -> Bool {
         let n = name.lowercased()
         let bodyweight = [
-            "push up", "pushup", "pull up", "pullup", "chin up", "chinup",
-            "dip", "plank", "sit up", "situp", "crunch", "burpee",
-            "mountain climber", "leg raise", "hanging"
+            "push up", "pushup", "push-up", "pull up", "pullup", "pull-up",
+            "chin up", "chinup", "dip", "plank", "sit up", "situp", "sit-up",
+            "crunch", "burpee", "mountain climber", "leg raise", "knee raise",
+            "hanging", "box jump", "jump squat", "squat jump", "jumping jack",
+            "broad jump", "tuck jump", "lunge jump", "split jump", "star jump",
+            "wall sit", "glute bridge", "hip bridge", "superman", "bird dog",
+            "flutter kick", "v-up", "v up", "hollow", "l-sit", "l sit",
+            "dead hang", "pistol squat", "sissy squat", "air squat", "bodyweight",
+            "body weight", "high knee", "bear crawl", "inchworm", "handstand",
+            "skater", "toes to bar", "calf raise", "lunge", "inverted row",
+            "tire flip", "sledgehammer", "nordic", "pike push", "muscle up",
+            "ring row", "ring dip"
         ]
         return bodyweight.contains { n.contains($0) }
+    }
+
+    /// Carries, sleds, drags, and yoke walks are measured by load + distance,
+    /// not reps — so a missing rep count is expected, not something to ask about.
+    private func isDistanceBased(_ name: String) -> Bool {
+        let n = name.lowercased()
+        let kws = ["carry", "carries", "farmer", "suitcase", "sled", "drag",
+                   "prowler", "yoke", "sandbag"]
+        return kws.contains { n.contains($0) }
+    }
+
+    /// Did the user explicitly state how many sets? ("3x10", "1x5", "3 sets",
+    /// "one set", "single set"). If so we trust the parsed set count and don't
+    /// ask them to confirm a lone set.
+    private func messageStatesSetCount(_ text: String) -> Bool {
+        let t = text.lowercased()
+        if t.contains("single set") || t.contains("one set") { return true }
+        let patterns = [
+            #"\b\d+\s*[x×]\s*\d+"#,
+            #"\b\d+\s*sets?\b"#,
+            #"\b(one|two|three|four|five|six|seven|eight|nine|ten|single|couple|few)\s+sets?\b"#
+        ]
+        return patterns.contains { t.range(of: $0, options: .regularExpression) != nil }
     }
 
     /// Weights to suggest for an exercise. Falls back to fuzzy matching so that
@@ -450,13 +599,31 @@ final class AssistantViewModel: ObservableObject {
     /// piece is worth asking about) rather than free-form chatter?
     private func looksLikeWorkout(_ text: String) -> Bool {
         let t = text.lowercased()
-        guard t.rangeOfCharacter(from: .decimalDigits) != nil else { return false }
-        let signals = ["rep", "set", "lbs", " lb", "kg", "pound", "kilo", "@"]
+        guard hasNumber(t) else { return false }
+        let signals = [
+            "rep", "set", "lbs", " lb", "kg", "pound", "kilo", "@",
+            "second", "minute", "hold"
+        ]
         if signals.contains(where: { t.contains($0) }) { return true }
         return t.range(of: #"\d\s*[x×]\s*\d"#, options: .regularExpression) != nil
     }
 
+    /// Cardio entries ("ran 3 miles", "30 minute run") carry no set/rep/weight
+    /// signals, so `looksLikeWorkout` misses them. Used in the routing gate so a
+    /// polite request ("can you log ran 2 miles") still gets logged, not chatted.
+    private func looksLikeCardio(_ text: String) -> Bool {
+        let t = text.lowercased()
+        guard hasNumber(t) else { return false }
+        let signals = [
+            "ran ", "run", "running", "jog", "sprint", "treadmill", "cycl",
+            "bike", "biked", "row", "swam", "swim", "walk", "hiit", "cardio",
+            "mile", "km", "marathon", "elliptical"
+        ]
+        return signals.contains { t.contains($0) }
+    }
+
     func saveDraft(_ parsed: ParsedSession, date: Date, draftID: UUID) {
+        if lastDraft?.id == draftID { lastDraft = nil }
         // Optimistic: confirm in the chat immediately, save in the background.
         let count = parsed.exercises.count
         let confirmation: String
@@ -494,6 +661,7 @@ final class AssistantViewModel: ObservableObject {
     }
 
     func discardDraft(_ draftID: UUID) {
+        if lastDraft?.id == draftID { lastDraft = nil }
         replace(draftID, with: .text("No worries — nothing was saved."))
     }
 

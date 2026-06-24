@@ -28,11 +28,15 @@ async def parse_workout(request: ParseRequest) -> ParseResponse:
     Returns a WorkoutSessionSchema-shaped response with session_id=null.
     """
     body_weight_lbs: float | None = request.context.get("body_weight_lbs")
+    # The client passes its LOCAL today (YYYY-MM-DD) so relative dates like
+    # "yesterday" resolve in the user's timezone, not the server's.
+    today: str | None = request.context.get("today")
 
     parsed = await gemini_service.parse_transcript(
         transcript=request.transcript,
         unit_preference=request.unit_preference,
         body_weight_lbs=body_weight_lbs,
+        today=today,
     )
 
     # Normalise exercises: rename "sets" key inside each exercise if needed
@@ -45,6 +49,7 @@ async def parse_workout(request: ParseRequest) -> ParseResponse:
 
     return ParseResponse(
         session_id=None,
+        workout_date=parsed.get("workout_date"),
         workout_type=parsed.get("workout_type"),
         body_weight_lbs=parsed.get("body_weight_lbs"),
         cardio_notes=parsed.get("cardio_notes"),

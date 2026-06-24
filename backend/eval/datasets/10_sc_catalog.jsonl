@@ -1,0 +1,142 @@
+{"id": "sc_catalog-001", "category": "sc_catalog", "message": "back squat 5x5 at 225", "expect": {"action": "register", "exercise": "squat", "sets": 5, "reps": 5, "weight": 225.0, "forbid": ["leg", "front"]}}
+{"id": "sc_catalog-002", "category": "sc_catalog", "message": "front squat 3x3 at 185", "expect": {"action": "register", "exercise": "front squat", "sets": 3, "reps": 3, "weight": 185.0}}
+{"id": "sc_catalog-003", "category": "sc_catalog", "message": "overhead squat 3x5 at 95", "expect": {"action": "register", "exercise": "overhead squat", "sets": 3, "reps": 5, "weight": 95.0}}
+{"id": "sc_catalog-004", "category": "sc_catalog", "message": "box squat 4x4 at 205", "expect": {"action": "register", "exercise": "box squat", "sets": 4, "reps": 4, "weight": 205.0}}
+{"id": "sc_catalog-005", "category": "sc_catalog", "message": "pause squat 3x5 at 185", "expect": {"action": "register", "exercise": "pause squat", "sets": 3, "reps": 5, "weight": 185.0}}
+{"id": "sc_catalog-006", "category": "sc_catalog", "message": "conventional deadlift 1x5 at 315", "expect": {"action": "register", "exercise": "deadlift", "reps": 5, "weight": 315.0, "forbid": ["romanian", "stiff"]}}
+{"id": "sc_catalog-007", "category": "sc_catalog", "message": "sumo deadlift 3x5 at 275", "expect": {"action": "register", "exercise": "sumo deadlift", "sets": 3, "reps": 5, "weight": 275.0}}
+{"id": "sc_catalog-008", "category": "sc_catalog", "message": "romanian deadlift 4x8 at 185", "expect": {"action": "register", "exercise": "romanian deadlift", "sets": 4, "reps": 8, "weight": 185.0}}
+{"id": "sc_catalog-009", "category": "sc_catalog", "message": "stiff leg deadlift 3x10 at 135", "expect": {"action": "register", "exercise": "stiff leg deadlift", "sets": 3, "reps": 10, "weight": 135.0}}
+{"id": "sc_catalog-010", "category": "sc_catalog", "message": "deficit deadlift 3x3 at 295", "expect": {"action": "register", "exercise": "deficit deadlift", "sets": 3, "reps": 3, "weight": 295.0}}
+{"id": "sc_catalog-011", "category": "sc_catalog", "message": "barbell hip thrust 3x12 at 225", "expect": {"action": "register", "exercise": "hip thrust", "sets": 3, "reps": 12, "weight": 225.0}}
+{"id": "sc_catalog-012", "category": "sc_catalog", "message": "good morning 3x10 at 95", "expect": {"action": "register", "exercise": "good morning", "sets": 3, "reps": 10, "weight": 95.0}}
+{"id": "sc_catalog-013", "category": "sc_catalog", "message": "barbell walking lunge 3x10 at 95", "expect": {"action": "register", "exercise": "lunge", "sets": 3, "reps": 10, "weight": 95.0}}
+{"id": "sc_catalog-014", "category": "sc_catalog", "message": "bulgarian split squat 3x8 at 50", "expect": {"action": "register", "exercise": "split squat", "sets": 3, "reps": 8, "weight": 50.0}}
+{"id": "sc_catalog-015", "category": "sc_catalog", "message": "barbell glute bridge 3x12 at 185", "expect": {"action": "register", "exercise": "glute bridge", "sets": 3, "reps": 12, "weight": 185.0}}
+{"id": "sc_catalog-016", "category": "sc_catalog", "message": "zercher squat 3x6 at 155", "expect": {"action": "register", "exercise": "zercher squat", "sets": 3, "reps": 6, "weight": 155.0}}
+{"id": "sc_catalog-017", "category": "sc_catalog", "message": "bench press 3x10 at 135", "expect": {"action": "register", "exercise": "bench press", "sets": 3, "reps": 10, "weight": 135.0}}
+{"id": "sc_catalog-018", "category": "sc_catalog", "message": "incline bench press 4x8 at 115", "expect": {"action": "register", "exercise": "incline bench press", "sets": 4, "reps": 8, "weight": 115.0}}
+{"id": "sc_catalog-019", "category": "sc_catalog", "message": "decline bench press 3x10 at 135", "expect": {"action": "register", "exercise": "decline bench press", "sets": 3, "reps": 10, "weight": 135.0}}
+{"id": "sc_catalog-020", "category": "sc_catalog", "message": "close grip bench press 3x8 at 115", "expect": {"action": "register", "exercise": "close grip bench press", "sets": 3, "reps": 8, "weight": 115.0}}
+{"id": "sc_catalog-021", "category": "sc_catalog", "message": "standing overhead press 5x5 at 95", "expect": {"action": "register", "exercise": "overhead press", "sets": 5, "reps": 5, "weight": 95.0, "forbid": ["bench", "leg"]}}
+{"id": "sc_catalog-022", "category": "sc_catalog", "message": "push press 5x3 at 135", "expect": {"action": "register", "exercise": "push press", "sets": 5, "reps": 3, "weight": 135.0}}
+{"id": "sc_catalog-023", "category": "sc_catalog", "message": "barbell floor press 3x6 at 155", "expect": {"action": "register", "exercise": "floor press", "sets": 3, "reps": 6, "weight": 155.0}}
+{"id": "sc_catalog-024", "category": "sc_catalog", "message": "landmine press 3x10 at 45", "expect": {"action": "register", "exercise": "landmine press", "sets": 3, "reps": 10, "weight": 45.0}}
+{"id": "sc_catalog-025", "category": "sc_catalog", "message": "barbell row 4x8 at 135", "expect": {"action": "register", "exercise": "row", "sets": 4, "reps": 8, "weight": 135.0, "forbid": ["leg"]}}
+{"id": "sc_catalog-026", "category": "sc_catalog", "message": "pendlay row 5x5 at 155", "expect": {"action": "register", "exercise": "pendlay row", "sets": 5, "reps": 5, "weight": 155.0}}
+{"id": "sc_catalog-027", "category": "sc_catalog", "message": "bent over row 4x10 at 115", "expect": {"action": "register", "exercise": "bent over row", "sets": 4, "reps": 10, "weight": 115.0}}
+{"id": "sc_catalog-028", "category": "sc_catalog", "message": "t-bar row 3x10 at 90", "expect": {"action": "register", "exercise": "t-bar row", "sets": 3, "reps": 10, "weight": 90.0}}
+{"id": "sc_catalog-029", "category": "sc_catalog", "message": "barbell shrug 3x15 at 225", "expect": {"action": "register", "exercise": "shrug", "sets": 3, "reps": 15, "weight": 225.0}}
+{"id": "sc_catalog-030", "category": "sc_catalog", "message": "barbell upright row 3x12 at 65", "expect": {"action": "register", "exercise": "upright row", "sets": 3, "reps": 12, "weight": 65.0}}
+{"id": "sc_catalog-031", "category": "sc_catalog", "message": "barbell curl 3x10 at 65", "expect": {"action": "register", "exercise": "curl", "sets": 3, "reps": 10, "weight": 65.0}}
+{"id": "sc_catalog-032", "category": "sc_catalog", "message": "dumbbell bench press 3x10 at 60", "expect": {"action": "register", "exercise": "bench press", "sets": 3, "reps": 10, "weight": 60.0}}
+{"id": "sc_catalog-033", "category": "sc_catalog", "message": "incline dumbbell press 3x12 at 50", "expect": {"action": "register", "exercise": "incline", "sets": 3, "reps": 12, "weight": 50.0}}
+{"id": "sc_catalog-034", "category": "sc_catalog", "message": "dumbbell shoulder press 3x10 at 45", "expect": {"action": "register", "exercise": "shoulder press", "sets": 3, "reps": 10, "weight": 45.0}}
+{"id": "sc_catalog-035", "category": "sc_catalog", "message": "arnold press 3x12 at 35", "expect": {"action": "register", "exercise": "arnold press", "sets": 3, "reps": 12, "weight": 35.0}}
+{"id": "sc_catalog-036", "category": "sc_catalog", "message": "dumbbell lateral raise 4x15 at 20", "expect": {"action": "register", "exercise": "lateral raise", "sets": 4, "reps": 15, "weight": 20.0}}
+{"id": "sc_catalog-037", "category": "sc_catalog", "message": "dumbbell front raise 3x12 at 20", "expect": {"action": "register", "exercise": "front raise", "sets": 3, "reps": 12, "weight": 20.0}}
+{"id": "sc_catalog-038", "category": "sc_catalog", "message": "rear delt fly 3x15 at 15", "expect": {"action": "register", "exercise": "rear delt", "sets": 3, "reps": 15, "weight": 15.0}}
+{"id": "sc_catalog-039", "category": "sc_catalog", "message": "one arm dumbbell row 3x10 at 70", "expect": {"action": "register", "exercise": "row", "sets": 3, "reps": 10, "weight": 70.0}}
+{"id": "sc_catalog-040", "category": "sc_catalog", "message": "dumbbell curl 3x12 at 30", "expect": {"action": "register", "exercise": "curl", "sets": 3, "reps": 12, "weight": 30.0}}
+{"id": "sc_catalog-041", "category": "sc_catalog", "message": "hammer curl 3x12 at 35", "expect": {"action": "register", "exercise": "hammer curl", "sets": 3, "reps": 12, "weight": 35.0}}
+{"id": "sc_catalog-042", "category": "sc_catalog", "message": "incline dumbbell curl 3x10 at 25", "expect": {"action": "register", "exercise": "curl", "sets": 3, "reps": 10, "weight": 25.0}}
+{"id": "sc_catalog-043", "category": "sc_catalog", "message": "dumbbell fly 3x12 at 30", "expect": {"action": "register", "exercise": "fly", "sets": 3, "reps": 12, "weight": 30.0}}
+{"id": "sc_catalog-044", "category": "sc_catalog", "message": "dumbbell pullover 3x12 at 45", "expect": {"action": "register", "exercise": "pullover", "sets": 3, "reps": 12, "weight": 45.0}}
+{"id": "sc_catalog-045", "category": "sc_catalog", "message": "goblet squat 3x12 at 50", "expect": {"action": "register", "exercise": "goblet squat", "sets": 3, "reps": 12, "weight": 50.0}}
+{"id": "sc_catalog-046", "category": "sc_catalog", "message": "dumbbell romanian deadlift 3x10 at 50", "expect": {"action": "register", "exercise": "romanian deadlift", "sets": 3, "reps": 10, "weight": 50.0}}
+{"id": "sc_catalog-047", "category": "sc_catalog", "message": "dumbbell shrug 3x15 at 70", "expect": {"action": "register", "exercise": "shrug", "sets": 3, "reps": 15, "weight": 70.0}}
+{"id": "sc_catalog-048", "category": "sc_catalog", "message": "tricep kickback 3x15 at 15", "expect": {"action": "register", "exercise": "kickback", "sets": 3, "reps": 15, "weight": 15.0}}
+{"id": "sc_catalog-049", "category": "sc_catalog", "message": "dumbbell skull crusher 3x12 at 25", "expect": {"action": "register", "exercise": "skull crusher", "sets": 3, "reps": 12, "weight": 25.0}}
+{"id": "sc_catalog-050", "category": "sc_catalog", "message": "dumbbell thruster 3x10 at 35", "expect": {"action": "register", "exercise": "thruster", "sets": 3, "reps": 10, "weight": 35.0}}
+{"id": "sc_catalog-051", "category": "sc_catalog", "message": "dumbbell step up 3x10 at 40", "expect": {"action": "register", "exercise": "step up", "sets": 3, "reps": 10, "weight": 40.0}}
+{"id": "sc_catalog-052", "category": "sc_catalog", "message": "lat pulldown 3x12 at 120", "expect": {"action": "register", "exercise": "lat pulldown", "sets": 3, "reps": 12, "weight": 120.0}}
+{"id": "sc_catalog-053", "category": "sc_catalog", "message": "seated cable row 3x12 at 130", "expect": {"action": "register", "exercise": "row", "sets": 3, "reps": 12, "weight": 130.0}}
+{"id": "sc_catalog-054", "category": "sc_catalog", "message": "chest press machine 3x12 at 100", "expect": {"action": "register", "exercise": "chest press", "sets": 3, "reps": 12, "weight": 100.0}}
+{"id": "sc_catalog-055", "category": "sc_catalog", "message": "pec deck 3x15 at 80", "expect": {"action": "register", "exercise": "pec deck", "sets": 3, "reps": 15, "weight": 80.0, "forbid": ["leg"]}}
+{"id": "sc_catalog-056", "category": "sc_catalog", "message": "cable fly 3x15 at 25", "expect": {"action": "register", "exercise": "fly", "sets": 3, "reps": 15, "weight": 25.0}}
+{"id": "sc_catalog-057", "category": "sc_catalog", "message": "tricep pushdown 3x15 at 50", "expect": {"action": "register", "exercise": "pushdown", "sets": 3, "reps": 15, "weight": 50.0}}
+{"id": "sc_catalog-058", "category": "sc_catalog", "message": "rope pushdown 3x15 at 40", "expect": {"action": "register", "exercise": "pushdown", "sets": 3, "reps": 15, "weight": 40.0}}
+{"id": "sc_catalog-059", "category": "sc_catalog", "message": "cable curl 3x12 at 40", "expect": {"action": "register", "exercise": "curl", "sets": 3, "reps": 12, "weight": 40.0}}
+{"id": "sc_catalog-060", "category": "sc_catalog", "message": "face pull 3x20 at 35", "expect": {"action": "register", "exercise": "face pull", "sets": 3, "reps": 20, "weight": 35.0}}
+{"id": "sc_catalog-061", "category": "sc_catalog", "message": "leg press 3x12 at 360", "expect": {"action": "register", "exercise": "leg press", "sets": 3, "reps": 12, "weight": 360.0}}
+{"id": "sc_catalog-062", "category": "sc_catalog", "message": "leg extension 3x15 at 90", "expect": {"action": "register", "exercise": "leg extension", "sets": 3, "reps": 15, "weight": 90.0}}
+{"id": "sc_catalog-063", "category": "sc_catalog", "message": "lying leg curl 3x12 at 80", "expect": {"action": "register", "exercise": "leg curl", "sets": 3, "reps": 12, "weight": 80.0}}
+{"id": "sc_catalog-064", "category": "sc_catalog", "message": "seated leg curl 3x12 at 85", "expect": {"action": "register", "exercise": "leg curl", "sets": 3, "reps": 12, "weight": 85.0}}
+{"id": "sc_catalog-065", "category": "sc_catalog", "message": "hack squat 3x10 at 180", "expect": {"action": "register", "exercise": "hack squat", "sets": 3, "reps": 10, "weight": 180.0}}
+{"id": "sc_catalog-066", "category": "sc_catalog", "message": "seated calf raise 4x15 at 90", "expect": {"action": "register", "exercise": "calf raise", "sets": 4, "reps": 15, "weight": 90.0}}
+{"id": "sc_catalog-067", "category": "sc_catalog", "message": "cable crunch 3x15 at 60", "expect": {"action": "register", "exercise": "crunch", "sets": 3, "reps": 15, "weight": 60.0}}
+{"id": "sc_catalog-068", "category": "sc_catalog", "message": "hip abduction machine 3x20 at 100", "expect": {"action": "register", "exercise": "abduction", "sets": 3, "reps": 20, "weight": 100.0}}
+{"id": "sc_catalog-069", "category": "sc_catalog", "message": "hip adduction machine 3x20 at 100", "expect": {"action": "register", "exercise": "adduction", "sets": 3, "reps": 20, "weight": 100.0}}
+{"id": "sc_catalog-070", "category": "sc_catalog", "message": "smith machine squat 3x10 at 135", "expect": {"action": "register", "exercise": "squat", "sets": 3, "reps": 10, "weight": 135.0}}
+{"id": "sc_catalog-071", "category": "sc_catalog", "message": "push ups 3x20", "expect": {"action": "register", "exercise": "push up", "sets": 3, "reps": 20}}
+{"id": "sc_catalog-072", "category": "sc_catalog", "message": "pull ups 4x8", "expect": {"action": "register", "exercise": "pull up", "sets": 4, "reps": 8}}
+{"id": "sc_catalog-073", "category": "sc_catalog", "message": "chin ups 3x10", "expect": {"action": "register", "exercise": "chin up", "sets": 3, "reps": 10}}
+{"id": "sc_catalog-074", "category": "sc_catalog", "message": "dips 3x12", "expect": {"action": "register", "exercise": "dip", "sets": 3, "reps": 12}}
+{"id": "sc_catalog-075", "category": "sc_catalog", "message": "pistol squats 3x8", "expect": {"action": "register", "exercise": "pistol squat", "sets": 3, "reps": 8}}
+{"id": "sc_catalog-076", "category": "sc_catalog", "message": "bodyweight squats 3x25", "expect": {"action": "register", "exercise": "squat", "sets": 3, "reps": 25}}
+{"id": "sc_catalog-077", "category": "sc_catalog", "message": "walking lunges 3x20", "expect": {"action": "register", "exercise": "lunge", "sets": 3, "reps": 20}}
+{"id": "sc_catalog-078", "category": "sc_catalog", "message": "hanging leg raises 3x15", "expect": {"action": "register", "exercise": "leg raise", "sets": 3, "reps": 15}}
+{"id": "sc_catalog-079", "category": "sc_catalog", "message": "sit ups 3x30", "expect": {"action": "register", "exercise": "sit up", "sets": 3, "reps": 30}}
+{"id": "sc_catalog-080", "category": "sc_catalog", "message": "crunches 3x25", "expect": {"action": "register", "exercise": "crunch", "sets": 3, "reps": 25}}
+{"id": "sc_catalog-081", "category": "sc_catalog", "message": "burpees 4x15", "expect": {"action": "register", "exercise": "burpee", "sets": 4, "reps": 15}}
+{"id": "sc_catalog-082", "category": "sc_catalog", "message": "mountain climbers 3x30", "expect": {"action": "register", "exercise": "mountain climber", "sets": 3, "reps": 30}}
+{"id": "sc_catalog-083", "category": "sc_catalog", "message": "nordic curls 3x6", "expect": {"action": "register", "exercise": "nordic", "sets": 3, "reps": 6}}
+{"id": "sc_catalog-084", "category": "sc_catalog", "message": "inverted rows 3x12", "expect": {"action": "register", "exercise": "inverted row", "sets": 3, "reps": 12}}
+{"id": "sc_catalog-085", "category": "sc_catalog", "message": "pike push ups 3x10", "expect": {"action": "register", "exercise": "pike", "sets": 3, "reps": 10}}
+{"id": "sc_catalog-086", "category": "sc_catalog", "message": "diamond push ups 3x15", "expect": {"action": "register", "exercise": "diamond", "sets": 3, "reps": 15}}
+{"id": "sc_catalog-087", "category": "sc_catalog", "message": "handstand push ups 3x5", "expect": {"action": "register", "exercise": "handstand", "sets": 3, "reps": 5}}
+{"id": "sc_catalog-088", "category": "sc_catalog", "message": "muscle ups 3x3", "expect": {"action": "register", "exercise": "muscle up", "sets": 3, "reps": 3}}
+{"id": "sc_catalog-089", "category": "sc_catalog", "message": "glute bridges 3x20", "expect": {"action": "register", "exercise": "glute bridge", "sets": 3, "reps": 20}}
+{"id": "sc_catalog-090", "category": "sc_catalog", "message": "plank for 60 seconds", "expect": {"action": "register", "exercise": "plank"}}
+{"id": "sc_catalog-091", "category": "sc_catalog", "message": "side plank 3 sets of 45 seconds", "expect": {"action": "register", "exercise": "side plank"}}
+{"id": "sc_catalog-092", "category": "sc_catalog", "message": "hollow hold 3 sets of 30 seconds", "expect": {"action": "register", "exercise": "hollow"}}
+{"id": "sc_catalog-093", "category": "sc_catalog", "message": "wall sit for 90 seconds", "expect": {"action": "register", "exercise": "wall sit"}}
+{"id": "sc_catalog-094", "category": "sc_catalog", "message": "dead hang for 60 seconds", "expect": {"action": "register", "exercise": "dead hang"}}
+{"id": "sc_catalog-095", "category": "sc_catalog", "message": "box jumps 4x10", "expect": {"action": "register", "exercise": "box jump", "sets": 4, "reps": 10}}
+{"id": "sc_catalog-096", "category": "sc_catalog", "message": "broad jumps 3x8", "expect": {"action": "register", "exercise": "broad jump", "sets": 3, "reps": 8}}
+{"id": "sc_catalog-097", "category": "sc_catalog", "message": "jumping jacks 3x50", "expect": {"action": "register", "exercise": "jumping jack", "sets": 3, "reps": 50}}
+{"id": "sc_catalog-098", "category": "sc_catalog", "message": "power clean 5x3 at 155", "expect": {"action": "register", "exercise": "power clean", "sets": 5, "reps": 3, "weight": 155.0}}
+{"id": "sc_catalog-099", "category": "sc_catalog", "message": "hang clean 4x3 at 135", "expect": {"action": "register", "exercise": "hang clean", "sets": 4, "reps": 3, "weight": 135.0}}
+{"id": "sc_catalog-100", "category": "sc_catalog", "message": "clean and jerk 5x2 at 165", "expect": {"action": "register", "exercise": "clean", "sets": 5, "reps": 2, "weight": 165.0}}
+{"id": "sc_catalog-101", "category": "sc_catalog", "message": "snatch 5x2 at 115", "expect": {"action": "register", "exercise": "snatch", "sets": 5, "reps": 2, "weight": 115.0}}
+{"id": "sc_catalog-102", "category": "sc_catalog", "message": "power snatch 4x2 at 95", "expect": {"action": "register", "exercise": "power snatch", "sets": 4, "reps": 2, "weight": 95.0}}
+{"id": "sc_catalog-103", "category": "sc_catalog", "message": "push jerk 4x3 at 145", "expect": {"action": "register", "exercise": "jerk", "sets": 4, "reps": 3, "weight": 145.0}}
+{"id": "sc_catalog-104", "category": "sc_catalog", "message": "split jerk 4x2 at 155", "expect": {"action": "register", "exercise": "split jerk", "sets": 4, "reps": 2, "weight": 155.0}}
+{"id": "sc_catalog-105", "category": "sc_catalog", "message": "barbell thruster 4x8 at 95", "expect": {"action": "register", "exercise": "thruster", "sets": 4, "reps": 8, "weight": 95.0}}
+{"id": "sc_catalog-106", "category": "sc_catalog", "message": "clean pull 3x3 at 185", "expect": {"action": "register", "exercise": "clean pull", "sets": 3, "reps": 3, "weight": 185.0}}
+{"id": "sc_catalog-107", "category": "sc_catalog", "message": "kettlebell swing 4x20 at 53", "expect": {"action": "register", "exercise": "swing", "sets": 4, "reps": 20, "weight": 53.0}}
+{"id": "sc_catalog-108", "category": "sc_catalog", "message": "kettlebell goblet squat 3x12 at 35", "expect": {"action": "register", "exercise": "goblet squat", "sets": 3, "reps": 12, "weight": 35.0}}
+{"id": "sc_catalog-109", "category": "sc_catalog", "message": "kettlebell clean 3x10 at 35", "expect": {"action": "register", "exercise": "clean", "sets": 3, "reps": 10, "weight": 35.0}}
+{"id": "sc_catalog-110", "category": "sc_catalog", "message": "kettlebell snatch 3x8 at 35", "expect": {"action": "register", "exercise": "snatch", "sets": 3, "reps": 8, "weight": 35.0}}
+{"id": "sc_catalog-111", "category": "sc_catalog", "message": "turkish get up 3x5 at 35", "expect": {"action": "register", "exercise": "get up", "sets": 3, "reps": 5, "weight": 35.0}}
+{"id": "sc_catalog-112", "category": "sc_catalog", "message": "kettlebell deadlift 3x12 at 70", "expect": {"action": "register", "exercise": "deadlift", "sets": 3, "reps": 12, "weight": 70.0}}
+{"id": "sc_catalog-113", "category": "sc_catalog", "message": "kettlebell press 3x8 at 35", "expect": {"action": "register", "exercise": "press", "sets": 3, "reps": 8, "weight": 35.0}}
+{"id": "sc_catalog-114", "category": "sc_catalog", "message": "kettlebell windmill 3x8 at 25", "expect": {"action": "register", "exercise": "windmill", "sets": 3, "reps": 8, "weight": 25.0}}
+{"id": "sc_catalog-115", "category": "sc_catalog", "message": "farmers carry 3 sets of 40 yards at 70 per hand", "expect": {"action": "register", "exercise": "farmer", "weight": 70.0}}
+{"id": "sc_catalog-116", "category": "sc_catalog", "message": "suitcase carry 3 sets of 30 yards at 60", "expect": {"action": "register", "exercise": "suitcase", "weight": 60.0}}
+{"id": "sc_catalog-117", "category": "sc_catalog", "message": "sled push 4 sets of 20 yards at 180", "expect": {"action": "register", "exercise": "sled push", "weight": 180.0, "forbid": ["leg", "lunge"]}}
+{"id": "sc_catalog-118", "category": "sc_catalog", "message": "sled drag 3 sets of 25 yards at 140", "expect": {"action": "register", "exercise": "sled", "weight": 140.0}}
+{"id": "sc_catalog-119", "category": "sc_catalog", "message": "prowler push 4 sets of 20 meters at 200", "expect": {"action": "register", "exercise": "prowler", "weight": 200.0}}
+{"id": "sc_catalog-120", "category": "sc_catalog", "message": "yoke walk 3 sets of 15 meters at 400", "expect": {"action": "register", "exercise": "yoke", "weight": 400.0}}
+{"id": "sc_catalog-121", "category": "sc_catalog", "message": "atlas stone over bar 3x3 at 200", "expect": {"action": "register", "exercise": "atlas stone", "sets": 3, "reps": 3, "weight": 200.0}}
+{"id": "sc_catalog-122", "category": "sc_catalog", "message": "log press 4x3 at 145", "expect": {"action": "register", "exercise": "log press", "sets": 4, "reps": 3, "weight": 145.0}}
+{"id": "sc_catalog-123", "category": "sc_catalog", "message": "tire flips 3x5", "expect": {"action": "register", "exercise": "tire flip", "sets": 3, "reps": 5}}
+{"id": "sc_catalog-124", "category": "sc_catalog", "message": "sledgehammer swings 3x20", "expect": {"action": "register", "exercise": "sledgehammer", "sets": 3, "reps": 20}}
+{"id": "sc_catalog-125", "category": "sc_catalog", "message": "battle ropes 3 sets of 30 seconds", "expect": {"action": "register", "exercise": "battle rope"}}
+{"id": "sc_catalog-126", "category": "sc_catalog", "message": "wall balls 3x20 at 20", "expect": {"action": "register", "exercise": "wall ball", "sets": 3, "reps": 20, "weight": 20.0}}
+{"id": "sc_catalog-127", "category": "sc_catalog", "message": "medicine ball slams 3x15 at 20", "expect": {"action": "register", "exercise": "slam", "sets": 3, "reps": 15, "weight": 20.0}}
+{"id": "sc_catalog-128", "category": "sc_catalog", "message": "devil press 3x10 at 35", "expect": {"action": "register", "exercise": "devil press", "sets": 3, "reps": 10, "weight": 35.0}}
+{"id": "sc_catalog-129", "category": "sc_catalog", "message": "sandbag carry 3 sets of 40 yards at 100", "expect": {"action": "register", "exercise": "sandbag", "weight": 100.0}}
+{"id": "sc_catalog-130", "category": "sc_catalog", "message": "kettlebell farmers carry 3 sets of 50 feet at 53", "expect": {"action": "register", "exercise": "farmer", "weight": 53.0}}
+{"id": "sc_catalog-131", "category": "sc_catalog", "message": "ran 3 miles", "expect": {"action": "register_cardio", "activity": "Running"}}
+{"id": "sc_catalog-132", "category": "sc_catalog", "message": "sprinted 10x100 meters", "expect": {"action": "register_cardio", "activity": "Sprints"}}
+{"id": "sc_catalog-133", "category": "sc_catalog", "message": "rowed 2000 meters on the erg", "expect": {"action": "register_cardio", "activity": "Rowing"}}
+{"id": "sc_catalog-134", "category": "sc_catalog", "message": "assault bike for 20 minutes", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "sc_catalog-135", "category": "sc_catalog", "message": "echo bike 15 minute intervals", "expect": {"action": "register_cardio", "activity": "Cycling"}}
+{"id": "sc_catalog-136", "category": "sc_catalog", "message": "ski erg 1000 meters", "expect": {"action": "register_cardio", "activity": "Ski"}}
+{"id": "sc_catalog-137", "category": "sc_catalog", "message": "treadmill incline walk for 30 minutes", "expect": {"action": "register_cardio", "activity": "Walking"}}
+{"id": "sc_catalog-138", "category": "sc_catalog", "message": "elliptical for 25 minutes", "expect": {"action": "register_cardio", "activity": "Elliptical"}}
+{"id": "sc_catalog-139", "category": "sc_catalog", "message": "stair climber for 20 minutes", "expect": {"action": "register_cardio", "activity": "Stair"}}
+{"id": "sc_catalog-140", "category": "sc_catalog", "message": "swam 1000 meters", "expect": {"action": "register_cardio", "activity": "Swimming"}}
+{"id": "sc_catalog-141", "category": "sc_catalog", "message": "jumped rope for 10 minutes", "expect": {"action": "register_cardio", "activity": "Jump Rope"}}
+{"id": "sc_catalog-142", "category": "sc_catalog", "message": "30 minute zone 2 run", "expect": {"action": "register_cardio", "activity": "Running"}}

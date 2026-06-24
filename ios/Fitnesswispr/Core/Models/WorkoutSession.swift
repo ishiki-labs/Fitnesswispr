@@ -1,15 +1,15 @@
 import Foundation
 
-struct ExerciseSet: Codable, Identifiable {
+struct ExerciseSet: Codable, Identifiable, Equatable {
     var id: String { "\(setNumber)" }
-    let setNumber: Int
+    var setNumber: Int
     var reps: Int?
     var weight: Double?
     var weightUnit: String
     var durationSeconds: Int?
 }
 
-struct Exercise: Codable, Identifiable {
+struct Exercise: Codable, Identifiable, Equatable {
     var id: String = UUID().uuidString
     var exerciseId: String?
     var name: String
@@ -57,6 +57,9 @@ struct WorkoutSession: Codable, Identifiable {
 }
 
 struct ParsedSession: Codable {
+    /// The day the parser resolved from the transcript (e.g. "yesterday",
+    /// "last friday"), as YYYY-MM-DD. Nil when the parser didn't return one.
+    var workoutDate: String?
     var workoutType: String?
     var bodyWeightLbs: Double?
     var cardioNotes: String?
@@ -73,6 +76,14 @@ struct ParsedSession: Codable {
                 || cardioNotes?.isEmpty == false
                 || cardioDistance != nil
                 || durationMinutes != nil)
+    }
+
+    /// The date to pre-fill the confirmation DatePicker with: the parser's
+    /// resolved date if present and valid, otherwise today. The user can still
+    /// adjust it before saving.
+    var resolvedDate: Date {
+        if let s = workoutDate, let d = Date.from(apiString: s) { return d }
+        return Date()
     }
 }
 

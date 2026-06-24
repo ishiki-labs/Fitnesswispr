@@ -1,7 +1,7 @@
 import uuid
 from datetime import date, datetime
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, field_validator
 
 
 class ExerciseSetSchema(BaseModel):
@@ -13,6 +13,15 @@ class ExerciseSetSchema(BaseModel):
     weight: float | None = None
     weight_unit: str = "lbs"
     duration_seconds: int | None = None
+
+    @field_validator("weight_unit", mode="before")
+    @classmethod
+    def _default_weight_unit(cls, v):
+        # The LLM sends weight_unit: null for bodyweight moves (no weight). The
+        # field is a required string, so null would 500; coerce it to "lbs".
+        if v is None or (isinstance(v, str) and not v.strip()):
+            return "lbs"
+        return v
 
 
 class ExerciseSchema(BaseModel):
